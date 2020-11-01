@@ -1,0 +1,497 @@
+import React from "react";
+
+export default class About extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* <!-- start banner Area --> */}
+        <section className="banner-area relative about-banner" id="home">
+          <div className="overlay overlay-bg"></div>
+          <div className="container">
+            <div className="row d-flex align-items-center justify-content-center">
+              <div className="about-content col-lg-12">
+                <h1 className="text-white">Về chúng tôi</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End banner Area --> */}
+
+        {/* <!-- Start feature Area --> */}
+        <section className="feature-area pb-120"></section>
+        {/* <!-- End feature Area --> */}
+
+        {/* <!-- Start info Area --> */}
+        <section className="info-area pb-60">
+          <div className="container-fluid">
+            <div className="row align-items-center">
+              <div className="col-lg-6 no-padding info-area-left">
+                <img className="img-fluid" src="../../public/img/about-img.jpg" alt="" />
+              </div>
+              <div className="col-lg-6 info-area-right">
+                <h3>Trung tâm Ngôn ngữ và Hỗ trợ trao đổi học thuật (CLA)</h3>
+                <p>
+                  Tháng 10/2018, trường Đại học Bách Khoa Hà Nội đã ra quyết
+                  định thành lập Trung tâm Ngôn ngữ và Hỗ trợ trao đổi học thuật
+                  (CLA) trên cơ sở sáp nhập các đơn vị: Trung tâm Ngoại ngữ
+                  (CFL), Trung tâm tiếng Pháp (CFC), Trung tâm Hợp tác KHKT Việt
+                  – Đức (VDZ), Trung tâm Thông tin Năng lượng nguyên tử (ICONE).
+                </p>
+                <p>
+                  Từ khi thành lập đến nay, Trung tâm luôn là đơn vị đào tạo
+                  Ngoại ngữ và tổ chức khảo thí quốc tế chất lượng và uy tín.
+                  Mỗi năm, có gần 10.000 lượt học viên đã tham dự các khóa học
+                  ngoại ngữ: tiếng Anh, Pháp, Đức, Hàn, Nhật và gần 10.000 lượt
+                  thí sinh dự thi các chứng chỉ tiếng Anh (IELTS, Aptis, TOEIC,
+                  PTE), tiếng Đức (TestAS, TestDaF), tiếng Hàn (OPic) theo chuẩn
+                  quốc quốc tế.
+                </p>
+                <p>
+                  Đơn vị tự hào là một trong những trung tâm ngoại ngữ được yêu
+                  thích, là địa chỉ tin cậy của các bạn SV Bách Khoa, Kinh tế,
+                  Xây dựng, Ngân hàng… và nhiều người đi làm trên khắp địa bàn
+                  Hà Nội.
+                </p>
+                <p>
+                  Trung tâm đã vinh dự được Bộ Giáo dục & Đào tạo trao tặng danh
+                  hiệu Tập thể xuất sắc năm học 2018-2019.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End info Area --> */}
+
+        {/* <!-- Start course-mission Area --> */}
+        <div className="whole-wrap">
+          <div className="container">
+            <div className="section-top-border">
+              <h3 className="mb-30">Đại học Bách khoa Hà Nội</h3>
+              <div className="row">
+                <div className="col-md-3">
+                  <img
+                    src="../../public/img/dai-hoc-bach-khoa-ha-noi.jpg"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="col-md-9 mt-sm-20 left-align-p">
+                  <p>
+                    Trường Đại học Bách Khoa Hà Nội được thành lập vào năm 1956
+                    và là trường đại học kỹ thuật đầu tiên của cả nước. Với gần
+                    60 năm xây dựng và trưởng thành, Trường đã được Đảng và Nhà
+                    nước trao tặng nhiều huân, huy chương cao quý và được phong
+                    tặng danh hiệu Anh hùng trong thời kì đổi mới của đất nước.
+                    Trường hiện có 23 viện, 3 khoa và 15 trung tâm với khoảng
+                    2500 cán bộ và 40000 sinh viên. Trong hơn 50 năm qua, trường
+                    ĐHBKHN đã không ngừng phát triển và đóng góp to lớn vào sự
+                    nghiệp công nghiệp hóa, hiện đại hóa đất nước bằng việc đào
+                    tạo hàng ngàn kỹ sư, thạc sỹ, tiến sỹ và những nhà nghiên
+                    cứu đang hoạt động trong nhiều lĩnh vực trên khắp mọi miền
+                    của tổ quốc và ngoài lãnh thổ Việt Nam.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="section-top-border text-right">
+              <h3 className="mb-30">
+                Mục tiêu và Chức năng Trung tâm Ngôn ngữ và Trao đổi học thuật
+              </h3>
+              <div className="row">
+                <div className="col-md-9">
+                  <p className="text-right">
+                    Xây dựng Trung tâm Ngoại ngữ trở thành đơn vị tổ chức, quản
+                    lý công tác đào tạo ngoại ngữ ngoài chương trình chính khóa
+                    cho sinh viên ĐHBK HN và có khả năng tổ chức thi, cấp chứng
+                    chỉ công nhận nội bộ và chứng chỉ quốc tế.
+                  </p>
+                  <p className="text-right">
+                    Trung tâm Ngoại ngữ có chức năng xây dựng, tổ chức và quản
+                    lý các chương trình đào tạo ngoại ngữ, tổ chức thi cấp chứng
+                    chỉ công nhận nội bộ và chứng chỉ ngoại ngữ quốc tế.
+                  </p>
+                </div>
+                <div className="col-md-3">
+                  <img
+                    src="../../public/img/quang-truong-c1-dai-hoc-bach-khoa-hanoi.jpg"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <!-- End course-mission Area --> */}
+
+        {/* <!-- Start search-course Area --> */}
+        <section className="search-course-area relative">
+          <div className="overlay overlay-bg"></div>
+          <div className="container">
+            <div className="row justify-content-between align-items-center">
+              <div className="col-lg-6 col-md-6 search-course-left">
+                <h1 className="text-white">
+                  Nhận tư vấn từ trung tâm
+                  <br />
+                  về khóa học của bạn!
+                </h1>
+                <p>
+                  Mỗi năm, có hàng nghìn lượt học viên đã tham dự các khóa học
+                  tiếng Anh, Pháp, Đức, Hàn, Nhật. Chúng tôi tự hào là một trong
+                  những trung tâm ngoại ngữ được yêu thích, là địa chỉ tin cậy
+                  của các bạn SV Bách Khoa, Kinh tế, Xây dựng, Ngân hàng... và
+                  nhiều người đi làm trên địa bàn Hà Nội.
+                </p>
+                <div className="row details-content">
+                  <div className="col single-detials">
+                    <span className="lnr lnr-graduation-hat"></span>
+                    <a href="#">
+                      <h4>Đội ngũ giáo viên</h4>
+                    </a>
+                    <p>
+                      Đội ngũ giáo viên từ các trường đại học hàng đầu khu vực.
+                      Được đào tạo bài bản và có đầy đủ các chứng chỉ về chuyên
+                      ngành cũng như giảng dạy.
+                    </p>
+                  </div>
+                  <div className="col single-detials">
+                    <span className="lnr lnr-license"></span>
+                    <a href="#">
+                      <h4>Chứng chỉ</h4>
+                    </a>
+                    <p>Luyện thi các chứng chỉ nội bộ và chứng chỉ quốc tế.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 search-course-right section-gap">
+                <form className="form-wrap" action="#">
+                  <h4 className="text-white pb-20 text-center mb-30">
+                    Đăng ký nhận tư vấn
+                  </h4>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="name"
+                    placeholder="Họ và tên"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Họ và tên'"
+                  />
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="phone"
+                    placeholder="Số điện thoại"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Số điện thoại'"
+                  />
+                  <input
+                    type="email"
+                    className="form-control"
+                    name="email"
+                    placeholder="Email"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Email'"
+                  />
+                  <div className="form-select" id="service-select">
+                    <select>
+                      <option datd-display="">Bạn muốn tư vấn về</option>
+                      <option value="1">Các khóa học của trung tâm</option>
+                      <option value="2">Thi quốc tế</option>
+                      <option value="3">Thi nội bộ</option>
+                      <option value="4">Khác</option>
+                    </select>
+                  </div>
+                  <button className="primary-btn text-uppercase">
+                    Xác nhận
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End search-course Area --> */}
+        {/* <!-- Start review Area --> */}
+        <section className="review-area section-gap relative">
+          <div className="title text-center">
+            <h1 className="mb-10">Cảm nhận của học viên</h1>
+          </div>
+          <div className="overlay overlay-bg"></div>
+          <div className="container">
+            <div className="row">
+              <div className="active-review-carusel">
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Dương Tuấn Minh</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Ngô Minh Hào</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Bùi Đình Lực</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Nguyễn Hoàng Hải</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Cristiano Messi</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Nguyễn Quang Hải</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <img src="../../public/img/r1.png" alt="" />
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Khánh Trình Lê</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+                <div className="single-review item">
+                  <div className="title justify-content-start d-flex">
+                    <a href="#">
+                      <h4>Phùng Thanh Hải</h4>
+                    </a>
+                    <div className="star">
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                      <span className="fa fa-star checked"></span>
+                    </div>
+                  </div>
+                  <p>
+                    Accessories Here you can find the best computer accessory
+                    for your laptop, monitor, printer, scanner, speaker. Here
+                    you can find the best computer accessory for your laptop,
+                    monitor, printer, scanner, speaker.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End review Area --> */}
+        {/* <!-- Start gallery Area --> */}
+        <section className="gallery-area section-gap">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7">
+                <a href="../../public/img/gallery/g1.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g1.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-5">
+                <a href="../../public/img/gallery/g2.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-4">
+                <a href="../../public/img/gallery/g3.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g3.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-4">
+                <a href="../../public/img/gallery/g4.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g4.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-4">
+                <a href="../../public/img/gallery/g5.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g5.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-5">
+                <a href="../../public/img/gallery/g6.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g6.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div className="col-lg-7">
+                <a href="../../public/img/gallery/g7.jpg" className="img-gal">
+                  <div className="single-imgs relative">
+                    <div className="overlay overlay-bg"></div>
+                    <div className="relative">
+                      <img
+                        className="img-fluid"
+                        src="../../public/img/gallery/g7.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End gallery Area --> */}
+      </div>
+    );
+  }
+}
