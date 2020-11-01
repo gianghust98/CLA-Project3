@@ -1,0 +1,138 @@
+import React from "react";
+
+export default class BookRoom extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* <!-- start banner Area --> */}
+        <section class="banner-area relative about-banner" id="home">
+          <div class="overlay overlay-bg"></div>
+          <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="about-content col-lg-12">
+                <h1 class="text-white">Đặt phòng cho sự kiện của bạn</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End banner Area --> */}
+
+        {/* <!-- Start Button --> */}
+        <section class="button-area">
+          <div class="container border-top-generic">
+            <h3 class="text-heading">Danh sách phòng tầng 1</h3>
+            <div class="button-group-area">
+              <a href="#" class="genric-btn success">
+                Phòng 1
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 2
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 3
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 4
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 5
+              </a>
+            </div>
+            <div class="button-group-area mt-10">
+              <a href="#" class="genric-btn success">
+                Phòng 6
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 7
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 8
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 9
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 10
+              </a>
+            </div>
+            <h3 class="text-heading" style="margin-top: 30px;">
+              Danh sách phòng tầng 2
+            </h3>
+            <div class="button-group-area">
+              <a href="#" class="genric-btn success">
+                Phòng 1
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 2
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 3
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 4
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 5
+              </a>
+            </div>
+            <div class="button-group-area mt-10">
+              <a href="#" class="genric-btn success">
+                Phòng 6
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 7
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 8
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 9
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 10
+              </a>
+            </div>
+            <h3 class="text-heading" style="margin-top: 30px;">
+              Danh sách phòng tầng 3
+            </h3>
+            <div class="button-group-area">
+              <a href="#" class="genric-btn success">
+                Phòng 1
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 2
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 3
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 4
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 5
+              </a>
+            </div>
+            <div class="button-group-area mt-10">
+              <a href="#" class="genric-btn success">
+                Phòng 6
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 7
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 8
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 9
+              </a>
+              <a href="#" class="genric-btn success">
+                Phòng 10
+              </a>
+            </div>
+          </div>
+        </section>
+        {/* <!-- End Button --> */}
+      </div>
+    );
+  }
+}
