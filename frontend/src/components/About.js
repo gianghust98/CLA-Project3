@@ -1,16 +1,28 @@
 import React from "react";
+//import AboutUs from '../images/about.svg';
+import TeacherImg from '../images/teacher.svg';
+import CertificateImg from '../images/certificate.svg';
+import hust from '../images/hust.jpg';
 
 export default class About extends React.Component {
   render() {
     return (
       <div>
         {/* <!-- start banner Area --> */}
-        <section className="banner-area relative about-banner" id="home">
+        <section className="banner-area relative" id="home">
           <div className="overlay overlay-bg"></div>
           <div className="container">
-            <div className="row d-flex align-items-center justify-content-center">
-              <div className="about-content col-lg-12">
-                <h1 className="text-white">Về chúng tôi</h1>
+            <div className="row fullscreen d-flex align-items-center justify-content-between">
+              <div className="banner-content col-lg-9 col-md-12">
+                <h1 className="text-uppercase">
+                  About CLA
+                </h1>
+                <p className="pt-10 pb-10" style={{ color: 'white' }}>
+                  Cung cấp những dịch vụ giáo dục hàng đầu là nhiệm vụ và vinh
+                  dự của chúng tôi.
+                </p>
+                <br />
+                <br />
               </div>
             </div>
           </div>
@@ -25,10 +37,7 @@ export default class About extends React.Component {
         <section className="info-area pb-60">
           <div className="container-fluid">
             <div className="row align-items-center">
-              <div className="col-lg-6 no-padding info-area-left">
-                <img className="img-fluid" src="../../public/img/about-img.jpg" alt="" />
-              </div>
-              <div className="col-lg-6 info-area-right">
+              <div style={{textAlign: "center"}}>
                 <h3>Trung tâm Ngôn ngữ và Hỗ trợ trao đổi học thuật (CLA)</h3>
                 <p>
                   Tháng 10/2018, trường Đại học Bách Khoa Hà Nội đã ra quyết
@@ -66,11 +75,11 @@ export default class About extends React.Component {
         <div className="whole-wrap">
           <div className="container">
             <div className="section-top-border">
-              <h3 className="mb-30">Đại học Bách khoa Hà Nội</h3>
+              <h3 style={{textAlign: "center"}}>Đại học Bách khoa Hà Nội</h3>
               <div className="row">
                 <div className="col-md-3">
                   <img
-                    src="../../public/img/dai-hoc-bach-khoa-ha-noi.jpg"
+                    src={hust}
                     alt=""
                     className="img-fluid"
                   />
@@ -93,31 +102,22 @@ export default class About extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="section-top-border text-right">
+            <div className="section-top-border text-center">
               <h3 className="mb-30">
                 Mục tiêu và Chức năng Trung tâm Ngôn ngữ và Trao đổi học thuật
               </h3>
-              <div className="row">
-                <div className="col-md-9">
-                  <p className="text-right">
+              <div className="row">               
+                  <p>
                     Xây dựng Trung tâm Ngoại ngữ trở thành đơn vị tổ chức, quản
                     lý công tác đào tạo ngoại ngữ ngoài chương trình chính khóa
                     cho sinh viên ĐHBK HN và có khả năng tổ chức thi, cấp chứng
                     chỉ công nhận nội bộ và chứng chỉ quốc tế.
                   </p>
-                  <p className="text-right">
+                  <p>
                     Trung tâm Ngoại ngữ có chức năng xây dựng, tổ chức và quản
                     lý các chương trình đào tạo ngoại ngữ, tổ chức thi cấp chứng
                     chỉ công nhận nội bộ và chứng chỉ ngoại ngữ quốc tế.
                   </p>
-                </div>
-                <div className="col-md-3">
-                  <img
-                    src="../../public/img/quang-truong-c1-dai-hoc-bach-khoa-hanoi.jpg"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default class About extends React.Component {
                 </p>
                 <div className="row details-content">
                   <div className="col single-detials">
-                    <span className="lnr lnr-graduation-hat"></span>
+                  <img src= {TeacherImg} width={40} height={40} />
                     <a href="#">
                       <h4>Đội ngũ giáo viên</h4>
                     </a>
@@ -155,7 +155,7 @@ export default class About extends React.Component {
                     </p>
                   </div>
                   <div className="col single-detials">
-                    <span className="lnr lnr-license"></span>
+                  <img src={CertificateImg} width={40} height={40} />
                     <a href="#">
                       <h4>Chứng chỉ</h4>
                     </a>

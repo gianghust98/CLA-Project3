@@ -19,6 +19,9 @@ export default class NavBar extends React.Component {
             <nav id="nav-menu-container">
               <ul className="nav-menu">
                 <li>
+                  <Link to="/">Trang chủ</Link>
+                </li>
+                <li>
                   <Link to="/about">Giới thiệu</Link>
                 </li>
                 <li className="menu-has-children">

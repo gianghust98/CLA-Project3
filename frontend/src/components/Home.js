@@ -1,4 +1,6 @@
 import React from "react";
+import TeacherImg from '../images/teacher.svg';
+import CertificateImg from '../images/certificate.svg';
 
 export default class Home extends React.Component {
   render() {
@@ -81,7 +83,7 @@ export default class Home extends React.Component {
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
-                  <h1 className="mb-10">Các khóa học nổi bật</h1>
+                  <h1 className="mb-10" style={{ color: '#f7631b' }}>Các khóa học nổi bật</h1>
                   <p>Các khóa học được nhiều học viên lựa chọn.</p>
                 </div>
               </div>
@@ -95,7 +97,7 @@ export default class Home extends React.Component {
                       <img className="img-fluid" src="img/p1.jpg" alt="" />
                     </div>
                     <div className="meta d-flex justify-content-between">
-                      <p>
+                      <p>  
                         <span className="lnr lnr-users"></span> 355{" "}
                         <span className="lnr lnr-bubble"></span>35
                       </p>
@@ -291,7 +293,7 @@ export default class Home extends React.Component {
           <div className="container">
             <div className="row justify-content-between align-items-center">
               <div className="col-lg-6 col-md-6 search-course-left">
-                <h1 className="text-white">
+                <h1 style={{ color: '#f7631b' }}>
                   Nhận tư vấn từ trung tâm <br />
                   về khóa học của bạn!
                 </h1>
@@ -304,7 +306,7 @@ export default class Home extends React.Component {
                 </p>
                 <div className="row details-content">
                   <div className="col single-detials">
-                    <span className="lnr lnr-graduation-hat"></span>
+                    <img src= {TeacherImg} width={40} height={40} />
                     <a href="#">
                       <h4>Đội ngũ giáo viên</h4>
                     </a>
@@ -315,7 +317,7 @@ export default class Home extends React.Component {
                     </p>
                   </div>
                   <div className="col single-detials">
-                    <span className="lnr lnr-license"></span>
+                    <img src={CertificateImg} width={40} height={40} />
                     <a href="#">
                       <h4>Chứng chỉ</h4>
                     </a>
@@ -374,7 +376,7 @@ export default class Home extends React.Component {
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
-                  <h1 className="mb-10">Những sự kiện sắp diễn ra</h1>
+                  <h1 className="mb-10" style={{ color: '#f7631b' }}>Những sự kiện sắp diễn ra</h1>
                   <p>
                     Hãy tham gia những sự kiện của trung tâm để có thể tìm kiếm
                     được thông tin nhé!
@@ -488,7 +490,7 @@ export default class Home extends React.Component {
         {/* <!-- Start review Area --> */}
         <section className="review-area section-gap relative">
           <div className="title text-center">
-            <h1 className="mb-10">Cảm nhận của học viên</h1>
+            <h1 className="mb-10" style={{ color: '#f7631b' }}>Cảm nhận của học viên</h1>
           </div>
           <div className="overlay overlay-bg"></div>
           <div className="container">
@@ -685,7 +687,7 @@ export default class Home extends React.Component {
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
-                  <h1 className="mb-10">Chia sẻ kinh nghiệm</h1>
+                  <h1 className="mb-10" style={{ color: '#f7631b' }}>Chia sẻ kinh nghiệm</h1>
                   <p>Blog chia sẻ kinh nghiệm</p>
                 </div>
               </div>
