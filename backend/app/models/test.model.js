@@ -1,8 +1,14 @@
 module.exports = mongoose => {
   var schema = mongoose.Schema(
     { 
-      bannerName: String,
+      question: String,
       imageUrl: String,
+      choice1: String,
+      choice2: String,
+      choice3: String,
+      choice4: String,
+      correct: String,
+      explanation: String,
       status: Number
     },
     { timestamps: true }
@@ -12,6 +18,6 @@ module.exports = mongoose => {
     object.id = _id
     return object
   })
-  const Banner = mongoose.model("banner", schema)
-  return Banner
+  const Test = mongoose.model("test", schema)
+  return Test
 }

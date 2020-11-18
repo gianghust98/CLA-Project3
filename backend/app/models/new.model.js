@@ -1,9 +1,12 @@
 module.exports = mongoose => {
   var schema = mongoose.Schema(
     { 
-      bannerName: String,
-      imageUrl: String,
-      status: Number
+      title: String,
+      content: String,
+      shortDescription: String,
+      publishedDate: Date,
+      thumbnail: String,
+      newType: Number
     },
     { timestamps: true }
   )
@@ -12,6 +15,6 @@ module.exports = mongoose => {
     object.id = _id
     return object
   })
-  const Banner = mongoose.model("banner", schema)
-  return Banner
+  const New = mongoose.model("new", schema)
+  return New
 }
