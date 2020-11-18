@@ -1,18 +1,18 @@
 const db = require('../models')
 const Teacher = db.teachers
 
-// Create and Save a new Tutorial
+// Create and Save a new Teacher
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.name) {
     res.status(400).send({ message: "Content can not be empty" })
     return
   }
-  // Create a Tutorial
+  // Create a Teacher
   const teacher = new Teacher({
     name: req.body.name,
   })
-  // Save tutorial in the database
+  // Save teacher in the database
   teacher
     .save(teacher)
     .then(data => {
@@ -21,12 +21,12 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: 
-        err.message || "Some error occurred while creating the Tutorial."
+        err.message || "Some error occurred while creating the Teacher."
       })
     })
 }
 
-// Retrieve all Tutorials from the database
+// Retrieve all Teachers from the database
 exports.findAll = (req, res) => {
   const name = req.query.name
   var condition = name ? { name: { $regex: new RegExp(name), $options: "i" } } : {}
@@ -37,28 +37,28 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: 
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving Teachers."
       })
     })
 }
 
-// Find a singer Tutorial with an id
+// Find a singer Teacher with an id
 exports.findOne = (req, res) => {
   const id = req.params.id
   Teacher.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: "Not found Tutorial with id " + id })
+        res.status(404).send({ message: "Not found Teacher with id " + id })
       else res.send(data)
     })
     .catch(err => {
       res
         .status(500)
-        .send({ message: "Error retrieving Tutorial with id = " + id })
+        .send({ message: "Error retrieving Teacher with id = " + id })
     })
 }
 
-// Update a Tutorial by the id in the request
+// Update a Teacher by the id in the request
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
@@ -71,65 +71,51 @@ exports.update = (req, res) => {
     .then(data => {
       if(!data) {
         res.status(404).send({
-          message: `Cannot update Tutorial with id = ${id}. Maybe Tutorial was not found`
+          message: `Cannot update Teacher with id = ${id}. Maybe Teacher was not found`
         })
-      } else res.send({ message: "Tutorial was updated successfully" })
+      } else res.send({ message: "Teacher was updated successfully" })
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Tutorial with id = " + id
+        message: "Error updating Teacher with id = " + id
       })
     })
 }
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Teacher with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id
   Teacher.findByIdAndRemove(id, { useFindAndModify: false })
     .then(data => {
       if(!data) {
         res.status(404).send({
-          message: `Cannot delete Tutorial with id = ${id}`
+          message: `Cannot delete Teacher with id = ${id}`
         })
       } else {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "Teacher was deleted successfully!"
         })
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id = " + id
+        message: "Could not delete Teacher with id = " + id
       })
     })
 }
 
-// Deleted all Tutorials from the database
+// Deleted all Teachers from the database
 exports.deleteAll = (req, res) => {
   Teacher.deleteMany({})
     .then(data => {
       res.send({
-        message: `${data.deletedCount} Tutorials were deleted successfully!`
+        message: `${data.deletedCount} Teachers were deleted successfully!`
       })
     })
     .catch(err => {
       res.status(500).send({
         message: 
-          err.message || "Some error occurred while removing all Tutorials"
+          err.message || "Some error occurred while removing all Teachers"
       })
     })
 }
-
-// Find all published Tutorials
-// exports.findAllPublished = (req, res) => {
-//   Tutorial.find({ published: true })
-//     .then(data => {
-//       res.send(data)
-//     })
-//     .catch(err => {
-//       res.status(500).send({
-//         message: 
-//           err.message || "Some error occurred while retrieving tutorials"
-//       })
-//     })
-// }

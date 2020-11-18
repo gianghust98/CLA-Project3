@@ -1,10 +1,6 @@
 module.exports = mongoose => {
   var schema = mongoose.Schema(
-    { 
-      bannerName: String,
-      imageUrl: String,
-      status: Number
-    },
+    { name: String },
     { timestamps: true }
   )
   schema.method("toJSON", function() {
@@ -12,6 +8,6 @@ module.exports = mongoose => {
     object.id = _id
     return object
   })
-  const Banner = mongoose.model("banner", schema)
-  return Banner
+  const CourseGroup = mongoose.model("courseGroup", schema)
+  return CourseGroup
 }

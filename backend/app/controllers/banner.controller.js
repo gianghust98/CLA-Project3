@@ -5,8 +5,9 @@ const Banner = db.banners
 exports.create = (req, res) => {
   // Create a Banner
   const banner = new Banner({
-    banner_name: req.body.banner_name,
-    image_url: req.body.image_url,
+    bannerName: req.body.bannerName,
+    imageUrl: req.body.imageUrl,
+    status: req.body.status
   })
   // Save banner in the database
   banner
