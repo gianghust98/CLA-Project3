@@ -1,9 +1,8 @@
 module.exports = mongoose => {
   var schema = mongoose.Schema(
-    {
+    { 
       banner_name: String,
-      image_url: String
-      // status: string,
+      image_url: String,
     },
     { timestamps: true }
   )

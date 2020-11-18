@@ -3,16 +3,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Footer from './components/Footer'
-import './App.css';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './components/About';
 import Course from './components/Course/CourseDetail';
 import Test from './components/Test';
 import Event from './components/Event/Event';
 import News from './components/News';
 import Contact from './components/Contact';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 function App() {
   return (
