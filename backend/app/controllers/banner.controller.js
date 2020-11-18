@@ -3,16 +3,10 @@ const Banner = db.banners
 
 // Create and Save a new Banner
 exports.create = (req, res) => {
-  // Validate request
-  // if (!req.body.title) {
-  //   res.status(400).send({ message: "Content can not be empty" })
-  //   return
-  // }
   // Create a Banner
   const banner = new Banner({
     banner_name: req.body.banner_name,
-    image_url: req.body.image_url
-    // status: req.body.status
+    image_url: req.body.image_url,
   })
   // Save banner in the database
   banner
@@ -25,6 +19,36 @@ exports.create = (req, res) => {
         message: 
         err.message || "Some error occurred while creating the Banner."
       })
+    })
+}
+
+// Retrieve all Banners from the database
+exports.findAll = (req, res) => {
+  Banner.find()
+    .then(data => {
+      res.send(data)
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: 
+          err.message || "Some error occurred while retrieving banners."
+      })
+    })
+}
+
+// Find a singer Banner with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id
+  Banner.findById(id)
+    .then(data => {
+      if (!data)
+        res.status(404).send({ message: "Not found Banner with id " + id })
+      else res.send(data)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .send({ message: "Error retrieving Banner with id = " + id })
     })
 }
 

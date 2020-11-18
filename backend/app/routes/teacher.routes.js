@@ -1,25 +1,25 @@
 module.exports = app => {
   const teachers = require("../controllers/teacher.controller")
   var router = require("express").Router()
-  // Create a new Tutorial
+  // Create a new Teacher
   router.post("/", teachers.create)
 
-  //Retrieve all tutorials
+  //Retrieve all Teachers
   router.get("/", teachers.findAll)
 
-  // Retrieve all published Tutorials
-  // router.get("/published", tutorials.findAllPublished)
+  // Retrieve all published Teachers
+  // router.get("/published", Teachers.findAllPublished)
 
-  // Retrieve a single Tutorial with id
+  // Retrieve a single Teacher with id
   router.get("/:id", teachers.findOne)
 
-  // Update a Tutorial with id
+  // Update a Teacher with id
   router.put('/:id', teachers.update)
 
-  // Delete a Tutorial with id
+  // Delete a Teacher with id
   router.delete('/:id', teachers.delete)
 
-  // Delete all Tutorials
+  // Delete all Teachers
   router.delete('/', teachers.deleteAll)
 
   app.use('/api/teachers', router)
