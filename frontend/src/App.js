@@ -9,6 +9,8 @@ import Test from './components/Test';
 import Event from './components/Event/Event';
 import News from './components/News';
 import Contact from './components/Contact';
+import Login from './components/Login';
+import Signup from './components/Signup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
@@ -23,6 +25,8 @@ function App() {
       <Route exact path="/event" component={Event} />
       <Route exact path="/news" component={News} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
       <Footer />
     </Router>
   );
