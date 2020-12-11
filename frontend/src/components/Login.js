@@ -1,77 +1,172 @@
-import React, { Component } from "react";
-import { Button } from "reactstrap";
-import logo from "../images/logohust.png";
-import "../App.css";
+import React from "react";
+import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import AuthService from '../services/auth'
+import Login from "./Login";
+import Signup from './Signup'
+export default class NavBar extends React.Component {
+  state = {
+    modalVisibleSignIn: false,
+    modalVisibleSignUp: false,
+    showAdminBoard: false,
+    currentUser: undefined,
+  }
+  componentDidMount() {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      this.setState({
+        currentUser: user,
+        showAdminBoard: user.roles.includes("ROLE_ADMIN"),
+      });
+    }
+  }
 
-class Login extends Component {
+  toggleSignIn = () => {
+    this.setState({ modalVisibleSignIn: !this.state.modalVisibleSignIn })
+  }
+  toggleSignUp = () => {
+    this.setState({ modalVisibleSignUp: !this.state.modalVisibleSignUp })
+  }
+  logOut() {
+    AuthService.logout();
+  }
+
   render() {
+    const { currentUser, showAdminBoard } = this.state;
     return (
-      <div class="container" style={{ textAlign: "center" }}>
-        <div class="card border-0 shadow my-5">
-          <div class="card-body p-5">
-            <img src={logo} alt="logo_academy" className="logo_academy" />
-            <p class="lead2">Please Sign in or Sign up!</p>
-            <div className="sub_container">
-              <div className="form_singin">
-                <div className="card">
-                  <article className="card-body">
-                    <h4 className="card-title text-center mb-4 mt-1">
-                      Sign in
-                    </h4>
-                    <hr />
-                    <form onSubmit={this.handleSubmit}>
-                      <label>Enter your email or your name: </label>
-                      <div className="form-group">
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text">
-                              <i className="fa fa-user" />
-                            </span>
-                          </div>
-                          <input
-                            className="form-control"
-                            placeholder="Email or Name"
-                            type="name"
-                            onChange={() => console.log('username or email')}
-                          />
-                        </div>
-                      </div>
-                      <label>Enter your password: </label>
-                      <div className="form-group">
-                        <div className="input-group">
-                          <div className="input-group-prepend">
-                            <span className="input-group-text">
-                              <i className="fa fa-lock" />
-                            </span>
-                          </div>
-                          <input
-                            className="form-control"
-                            type="password"
-                            onChange={() => console.log('password')}
-                          />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <Button color="info">Login</Button>
-                      </div>
-                      <p className="text-center">
-                        <a href="#" className="btn" style={{ color: "green" }}>
-                          Forgot password?
-                        </a>
-                      </p>
-                    </form>
-                  </article>
-                </div>
-              </div>
-              <a href="/signup" className="singup">
-                Sign up
-              </a>
+      <header id="header">
+        <div className="container main-menu">
+          <div className="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+              <Link to="/">
+                <img
+                  style={{ width: '27vw' }}
+                  src="https://cfl.edu.vn/xmedia/2020/04/cla-title-2020a-400x47.png"
+                  alt=""
+                  title=""
+                />
+              </Link>
             </div>
+            <nav id="nav-menu-container">
+              <ul className="nav-menu">
+                <li>
+                  <Link to="/">Trang chủ</Link>
+                </li>
+                <li>
+                  <Link to="/about">Giới thiệu</Link>
+                </li>
+                <li className="menu-has-children">
+                  <Link to="#">Khảo thí</Link>
+                  <ul>
+                    <li>
+                      <Link to="/">Thi tiếng Anh nội bộ</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Thi TOEIC quốc tế</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Thi APTIS</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li className="menu-has-children">
+                  <Link to="#">Khóa học</Link>
+                  <ul>
+                    <li>
+                      <Link to="/course">Các khóa học của trung tâm</Link>
+                    </li>
+                    <li>
+                      <Link to="/test" target="_blank">
+                        Kiểm tra trình độ của bạn
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link to="/event">Sự kiện</Link>
+                </li>
+                <li>
+                  <Link to="/news">Tin tức</Link>
+                </li>
+                <li className="menu-has-children">
+                  <Link to="#">Liên hệ</Link>
+                  <ul>
+                    <li>
+                      <Link to="/contact">Liên hệ với chúng tôi</Link>
+                    </li>
+                    <li>
+                      <Link to="/book-room">Đặt phòng</Link>
+                    </li>
+                  </ul>
+                </li>
+                {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/admin"} className="nav-link">
+                  Admin Board
+                </Link>
+              </li>
+            )}
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={"/user"} className="nav-link">
+                  User
+                </Link>
+              </li>
+            )}
+            {currentUser ? (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to={"/profile"} className="nav-link">
+                  {currentUser.username}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a href="/login" className="nav-link" onClick={this.logOut}>
+                  LogOut
+                </a>
+              </li>
+            </div>
+          ) : (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item">
+                  <a 
+                    onClick={() => this.toggleSignIn()}
+                    style={{ 
+                      borderRight: '2px solid white',
+                      cursor: 'pointer',
+                      color: '#fff'
+                      }}>
+                    Login
+                  </a>
+                  <Modal isOpen={this.state.modalVisibleSignIn} toggle={this.toggleSignIn}>
+                    <ModalHeader toggle={this.toggleSignIn}>Login</ModalHeader>
+                    <ModalBody>
+                      <Login />
+                    </ModalBody>
+                  </Modal>
+              </li>
+              <li className="nav-item">
+                <a
+                  onClick={() => this.toggleSignUp()}
+                  style={{
+                    marginLeft: '-6px',
+                    cursor: 'pointer',
+                    color: '#fff'
+                  }}>Sign up</a>
+                  <Modal isOpen={this.state.modalVisibleSignUp} toggle={this.toggleSignUp}>
+                    <ModalHeader toggle={this.toggleSignUp}>Signup</ModalHeader>
+                    <ModalBody>
+                      <Signup />
+                    </ModalBody>
+                  </Modal>
+              </li>
+            </div>
+          )}
+              </ul>
+            </nav>
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }
-
-export default Login
