@@ -15,7 +15,7 @@ const required = (value) => {
   }
 };
 
-export default class Login extends Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);

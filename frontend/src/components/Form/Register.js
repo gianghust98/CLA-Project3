@@ -26,16 +26,6 @@ const email = (value) => {
   }
 };
 
-const email = (value) => {
-  if (!isEmail(value)) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This is not a valid email.
-      </div>
-    );
-  }
-};
-
 const vusername = (value) => {
   if (value.length < 3 || value.length > 20) {
     return (
