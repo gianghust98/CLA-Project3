@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Button,Table} from 'reactstrap';
 import DashBoard from './DashBoard.js';
+import hust from '../../images/hust.jpg';
+import tas from '../../images/teacherandstudent.jpg';
 //import { Table } from 'reactstrap';
 
 class BannerAdmin extends Component {
@@ -23,7 +25,7 @@ class BannerAdmin extends Component {
             </div>
                 <div className = "container">
                     <div className="row">
-                        <div className ="col-sm-3 categories">
+                        <div className ="col-sm-3 categories" style={{paddingLeft: 0,paddingRight: 0}}>
                             <DashBoard />
                         </div>
                         <div className ="col-sm-9 ">
@@ -48,8 +50,31 @@ class BannerAdmin extends Component {
                                                 <Button color="info">Confirm</Button>
                                             </td>
                                         </tr>
-                                </tbody>
+                                    </tbody>
                                 )) }
+                                {/* temporary */}
+                                <tbody>
+                                    <tr>
+                                        <td>Introduce tutorials</td>
+                                        <td><img src={hust} alt= "img_banner" width = {300}></img></td>
+                                        <td>
+                                            <Button color="info">upload banner</Button>
+                                        </td>
+                                        <td>
+                                            <Button color="info">Confirm</Button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type of tutorials</td>
+                                        <td><img src={tas} alt= "img_banner" width = {300}></img></td>
+                                        <td>
+                                            <Button color="info">upload banner</Button>
+                                        </td>
+                                        <td>
+                                            <Button color="info">Confirm</Button>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             
                             </Table>
                         </div>

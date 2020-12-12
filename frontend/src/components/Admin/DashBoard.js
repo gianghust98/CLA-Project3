@@ -8,25 +8,25 @@ class DashBoard extends Component {
                     <h3>Admin</h3>
                 </div>
                 <div className = "item_categories"> 
-                    <a href="#" >Banners</a>
+                    <a href="/admin/banners" style={{color: "#ced4dae8" , textDecoration: "none"}} >Banners</a>
+                </div>
+                <div className = "item_categories" > 
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}} >Events</a>
+                </div>
+                <div className = "item_categories" > 
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}}>Courses</a>
                 </div>
                 <div className = "item_categories"> 
-                    <a href="#" >Events</a>
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}}>News</a>
+                </div>
+                <div className = "item_categories" > 
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}}>Teachers</a>
+                </div>
+                <div className = "item_categories" > 
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}}>Students</a>
                 </div>
                 <div className = "item_categories"> 
-                    <a href="" >Courses</a>
-                </div>
-                <div className = "item_categories"> 
-                    <a href="" >News</a>
-                </div>
-                <div className = "item_categories"> 
-                    <a href="" >Teachers</a>
-                </div>
-                <div className = "item_categories"> 
-                    <a href="#" >Students</a>
-                </div>
-                <div className = "item_categories"> 
-                    <a href="" >Users</a>
+                    <a href="#" style={{color: "#ced4dae8", textDecoration: "none"}}>Users</a>
                 </div>
             </div>
         );
