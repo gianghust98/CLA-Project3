@@ -99,3 +99,33 @@
 	background-color: #ffb700;
 	border-color: #ffca00;
 }
+/* Admin-page */
+.admin_page {
+	background-color: #dee2e6b3;
+}
+.categories {
+	background-color: #545b62;
+}
+/* .graphs {
+	background-color: white;
+	
+} */
+.title_categories {
+	height: 50px;
+	color: white;
+}
+.item_categories {
+	height: 50px;
+	color:#ced4da;
+}
+.lineGraph {
+	margin: 20px;
+	background-color: white;
+}
+.todoList {
+	color: grey;
+	padding: 10px;
+	margin: 20px;
+	background-color: white;
+}
+
