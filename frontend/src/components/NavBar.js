@@ -1,8 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom"
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import AuthService from '../services/auth'
+import Login from "./Form/Login";
+import Signup from './Form/Register'
 export default class NavBar extends React.Component {
+  state = {
+    modalVisibleSignIn: false,
+    modalVisibleSignUp: false,
+    showAdminBoard: false,
+    currentUser: undefined,
+  }
+  componentDidMount() {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      this.setState({
+        currentUser: user,
+        showAdminBoard: user.roles.includes("ROLE_ADMIN"),
+      });
+    }
+  }
+
+  toggleSignIn = () => {
+    this.setState({ modalVisibleSignIn: !this.state.modalVisibleSignIn })
+  }
+  toggleSignUp = () => {
+    this.setState({ modalVisibleSignUp: !this.state.modalVisibleSignUp })
+  }
+  logOut() {
+    AuthService.logout();
+  }
+
   render() {
+    const { currentUser, showAdminBoard } = this.state;
     return (
       <header id="header">
         <div className="container main-menu">
@@ -10,6 +40,7 @@ export default class NavBar extends React.Component {
             <div id="logo">
               <Link to="/">
                 <img
+                  style={{ width: '27vw' }}
                   src="https://cfl.edu.vn/xmedia/2020/04/cla-title-2020a-400x47.png"
                   alt=""
                   title=""
@@ -68,6 +99,69 @@ export default class NavBar extends React.Component {
                     </li>
                   </ul>
                 </li>
+                {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/admin"} className="nav-link">
+                  Admin Board
+                </Link>
+              </li>
+            )}
+            {currentUser && (
+              <li className="nav-item">
+                <Link to={"/user"} className="nav-link">
+                  User
+                </Link>
+              </li>
+            )}
+            {currentUser ? (
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <Link to={"/profile"} className="nav-link">
+                    {currentUser.username}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a href="/" className="nav-link" onClick={this.logOut}>
+                    LogOut
+                  </a>
+                </li>
+              </div>
+            ) : (
+              <div className="navbar-nav ml-auto">
+                <li className="nav-item">
+                    <a 
+                      onClick={() => this.toggleSignIn()}
+                      style={{ 
+                        borderRight: '2px solid white',
+                        cursor: 'pointer',
+                        color: '#fff'
+                        }}>
+                      Login
+                    </a>
+                    <Modal isOpen={this.state.modalVisibleSignIn} toggle={this.toggleSignIn}>
+                      <ModalHeader toggle={this.toggleSignIn}>Login</ModalHeader>
+                      <ModalBody>
+                        <Login />
+                      </ModalBody>
+                    </Modal>
+                </li>
+                <li className="nav-item">
+                  <a
+                    onClick={() => this.toggleSignUp()}
+                    style={{
+                      marginLeft: '-6px',
+                      cursor: 'pointer',
+                      color: '#fff'
+                    }}>Sign up</a>
+                    <Modal isOpen={this.state.modalVisibleSignUp} toggle={this.toggleSignUp}>
+                      <ModalHeader toggle={this.toggleSignUp}>Signup</ModalHeader>
+                      <ModalBody>
+                        <Signup />
+                      </ModalBody>
+                    </Modal>
+                </li>
+              </div>
+            )}
               </ul>
             </nav>
           </div>
