@@ -26,7 +26,8 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 const App = (props) => {
   return (
     <Router>
-      { props.location.pathname!=='/admin' ? <NavBar /> : null }
+      { props.location.pathname !== '/admin' &&
+       props.location.pathname !== '/admin/banners' ? <NavBar /> : null }
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/course" component={Course} />
@@ -43,7 +44,8 @@ const App = (props) => {
       <Route exact path="/signup" component={Signup} /> */}
       <Route exact path="/admin" component={Admin} />
       <Route exact path="/admin/banners" component={BannerAdmin} />
-      { props.location.pathname!=='/admin' ? <Footer /> : null }
+      { props.location.pathname !== '/admin' &&
+       props.location.pathname !== '/admin/banners' ? <Footer /> : null }
     </Router>
   );
 }
