@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Footer from './components/Footer'
@@ -23,10 +23,10 @@ import BannerAdmin from './components/Admin/BannerAdmin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
-function App() {
+const App = (props) => {
   return (
     <Router>
-      <NavBar />
+      { props.location.pathname!=='/admin' ? <NavBar /> : null }
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/course" component={Course} />
@@ -43,10 +43,9 @@ function App() {
       <Route exact path="/signup" component={Signup} /> */}
       <Route exact path="/admin" component={Admin} />
       <Route exact path="/admin/banners" component={BannerAdmin} />
-      <Footer />
-     
+      { props.location.pathname!=='/admin' ? <Footer /> : null }
     </Router>
   );
 }
 
-export default App;
+export default withRouter(App)
