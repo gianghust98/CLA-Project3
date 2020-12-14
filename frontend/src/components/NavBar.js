@@ -34,8 +34,8 @@ export default class NavBar extends React.Component {
   render() {
     const { currentUser, showAdminBoard } = this.state;
     return (
-      <header id="header">
-        <div className="container main-menu">
+      <header id="header" style={{ padding: '0 50px' }}>
+        <div className="container-fluid main-menu">
           <div className="row align-items-center justify-content-between d-flex">
             <div id="logo">
               <Link to="/">
@@ -49,9 +49,6 @@ export default class NavBar extends React.Component {
             </div>
             <nav id="nav-menu-container">
               <ul className="nav-menu">
-                <li>
-                  <Link to="/">Trang chủ</Link>
-                </li>
                 <li>
                   <Link to="/about">Giới thiệu</Link>
                 </li>
@@ -100,68 +97,67 @@ export default class NavBar extends React.Component {
                   </ul>
                 </li>
                 {showAdminBoard && (
-              <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
-                </Link>
-              </li>
-            )}
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </li>
-            )}
-            {currentUser ? (
-              <div className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link to={"/profile"} className="nav-link">
-                    {currentUser.username}
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <a href="/" className="nav-link" onClick={this.logOut}>
-                    LogOut
-                  </a>
-                </li>
-              </div>
-            ) : (
-              <div className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <a 
-                      onClick={() => this.toggleSignIn()}
-                      style={{ 
-                        borderRight: '2px solid white',
-                        cursor: 'pointer',
-                        color: '#fff'
-                        }}>
-                      Login
-                    </a>
-                    <Modal isOpen={this.state.modalVisibleSignIn} toggle={this.toggleSignIn}>
-                      <ModalHeader toggle={this.toggleSignIn}>Login</ModalHeader>
-                      <ModalBody>
-                        <Login />
-                      </ModalBody>
-                    </Modal>
-                </li>
-                <li className="nav-item">
-                  <a
-                    onClick={() => this.toggleSignUp()}
-                    style={{
-                      marginLeft: '-6px',
-                      cursor: 'pointer',
-                      color: '#fff'
-                    }}>Sign up</a>
-                    <Modal isOpen={this.state.modalVisibleSignUp} toggle={this.toggleSignUp}>
-                      <ModalHeader toggle={this.toggleSignUp}>Signup</ModalHeader>
-                      <ModalBody>
-                        <Signup />
-                      </ModalBody>
-                    </Modal>
-                </li>
-              </div>
-            )}
+                  <li className="nav-item">
+                    <Link to={"/admin"} className="nav-link">
+                      Admin Board
+                    </Link>
+                  </li>
+                )}
+                {currentUser && (
+                  <li className="nav-item">
+                    <Link to={"/user"} className="nav-link">
+                      User
+                    </Link>
+                  </li>
+                )}
+                {currentUser ? (
+                  <div className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                      <Link to={"/profile"} className="nav-link">
+                        {currentUser.username}
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/" className="nav-link" onClick={this.logOut}>
+                        LogOut
+                      </a>
+                    </li>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex'}}>
+                    <li className="nav-item">
+                        <a 
+                          onClick={() => this.toggleSignIn()}
+                          style={{ 
+                            borderRight: '2px solid white',
+                            cursor: 'pointer',
+                            color: '#fff'
+                            }}>
+                          Login
+                        </a>
+                        <Modal isOpen={this.state.modalVisibleSignIn} toggle={this.toggleSignIn}>
+                          <ModalHeader toggle={this.toggleSignIn}>Login</ModalHeader>
+                          <ModalBody>
+                            <Login />
+                          </ModalBody>
+                        </Modal>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        onClick={() => this.toggleSignUp()}
+                        style={{
+                          cursor: 'pointer',
+                          color: '#fff'
+                        }}>Sign up</a>
+                        <Modal isOpen={this.state.modalVisibleSignUp} toggle={this.toggleSignUp}>
+                          <ModalHeader toggle={this.toggleSignUp}>Signup</ModalHeader>
+                          <ModalBody>
+                            <Signup />
+                          </ModalBody>
+                        </Modal>
+                    </li>
+                  </div>
+                )}
               </ul>
             </nav>
           </div>

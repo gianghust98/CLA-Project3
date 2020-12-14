@@ -1,6 +1,7 @@
 import React from "react";
 import TeacherImg from '../images/teacher.svg';
 import CertificateImg from '../images/certificate.svg';
+import FacebookIcon from '../images/facebook-icon.png'
 
 export default class Home extends React.Component {
   render() {
@@ -9,9 +10,10 @@ export default class Home extends React.Component {
         {/* <!-- start banner Area --> */}
         <section className="banner-area relative" id="home">
           <div className="overlay overlay-bg"></div>
-          <div className="container">
+          {/* <div className="container"> */}
+          <div className="">
             <div className="row fullscreen d-flex align-items-center justify-content-between">
-              <div className="banner-content col-lg-9 col-md-12">
+              <div className="banner-content col-lg-9 col-md-12" style={{ paddingLeft: 100 }}>
                 <h1 className="text-uppercase">
                   Chúng tôi cung cấp nền giáo dục tốt hơn cho một thế giới tốt
                   hơn!
@@ -83,7 +85,7 @@ export default class Home extends React.Component {
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
-                  <h1 className="mb-10" style={{ color: '#f7631b' }}>Các khóa học nổi bật</h1>
+                  <h1 style={{ color: '#f7631b' }}>Các khóa học nổi bật</h1>
                   <p>Các khóa học được nhiều học viên lựa chọn.</p>
                 </div>
               </div>
@@ -288,9 +290,10 @@ export default class Home extends React.Component {
         </section>
         {/* <!-- End popular-course Area --> */}
         {/* <!-- Start search-course Area --> */}
-        <section className="search-course-area relative">
+        <section className="search-course-area relative" style={{ padding: '50px' }}>
           <div className="overlay overlay-bg"></div>
-          <div className="container">
+          {/* <div className="container"> */}
+          <div className="">
             <div className="row justify-content-between align-items-center">
               <div className="col-lg-6 col-md-6 search-course-left">
                 <h1 style={{ color: '#f7631b' }}>
@@ -355,7 +358,7 @@ export default class Home extends React.Component {
                     onblur="this.placeholder = 'Email'"
                   />
                   <div className="form-select" id="service-select">
-                    <select>
+                    <select style={{ height: 30 }}>
                       <option datd-display="">Bạn muốn tư vấn về</option>
                       <option value="1">Các khóa học của trung tâm</option>
                       <option value="2">Thi quốc tế</option>
@@ -372,7 +375,8 @@ export default class Home extends React.Component {
         {/* <!-- End search-course Area --> */}
         {/* <!-- Start upcoming-event Area --> */}
         <section className="upcoming-event-area section-gap">
-          <div className="container">
+          {/* <div className="container"> */}
+          <div style={{ padding: '0 100px' }}>
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
@@ -494,6 +498,7 @@ export default class Home extends React.Component {
           </div>
           <div className="overlay overlay-bg"></div>
           <div className="container">
+          {/* <div className=""> */}
             <div className="row">
               <div className="active-review-carusel">
                 <div className="single-review item">
@@ -664,7 +669,8 @@ export default class Home extends React.Component {
         {/* <!-- End review Area --> */}
         {/* <!-- Start cta-one Area --> */}
         <section className="cta-one-area relative section-gap">
-          <div className="container">
+          {/* <div className="container"> */}
+          <div className="">
             <div className="overlay overlay-bg"></div>
             <div className="row justify-content-center">
               <div className="wrap">
@@ -684,6 +690,7 @@ export default class Home extends React.Component {
         {/* <!-- Start blog Area --> */}
         <section className="blog-area section-gap" id="blog">
           <div className="container">
+          {/* <div className=""> */}
             <div className="row d-flex justify-content-center">
               <div className="menu-content pb-70 col-lg-8">
                 <div className="title text-center">
@@ -785,6 +792,16 @@ export default class Home extends React.Component {
           </div>
         </section>
         {/* <!-- End blog Area --> */}
+        <a href="https://www.facebook.com/cfl.edu.vn">
+        <img
+            src={FacebookIcon}
+            style={{ 
+              position: 'fixed', 
+              bottom: 30, 
+              right: 20, 
+              width: '5%'
+            }} />
+        </a>
       </div>
     );
   }

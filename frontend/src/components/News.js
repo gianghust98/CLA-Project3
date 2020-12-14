@@ -1,4 +1,5 @@
 import React from "react";
+import FacebookIcon from '../images/facebook-icon.png'
 
 export default class News extends React.Component {
   render() {
@@ -190,6 +191,16 @@ export default class News extends React.Component {
           </div>
         </section>
         {/* <!-- End cta-two Area --> */}
+        <a href="https://www.facebook.com/cfl.edu.vn">
+        <img
+            src={FacebookIcon}
+            style={{ 
+              position: 'fixed', 
+              bottom: 30, 
+              right: 20, 
+              width: '5%'
+            }} />
+        </a>
       </div>
     );
   }
