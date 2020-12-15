@@ -231,7 +231,7 @@ export default class Course extends React.Component {
         </section>
         {/* <!-- End popular-courses Area --> */}
         {/* <!-- Start search-course Area --> */}
-        <section class="search-course-area relative">
+        <section class="search-course-area relative" style={{ padding: '50px' }}>
           <div class="overlay overlay-bg"></div>
           <div class="container">
             <div class="row justify-content-between align-items-center">
@@ -299,7 +299,7 @@ export default class Course extends React.Component {
                     onblur="this.placeholder = 'Your Email Address'"
                   />
                   <div class="form-select" id="service-select">
-                    <select>
+                    <select style={{ height: 30 }}>
                       <option datd-display="">Choose Course</option>
                       <option value="1">Course One</option>
                       <option value="2">Course Two</option>

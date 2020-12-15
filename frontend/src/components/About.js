@@ -1,8 +1,8 @@
 import React from "react";
-//import AboutUs from '../images/about.svg';
 import TeacherImg from '../images/teacher.svg';
 import CertificateImg from '../images/certificate.svg';
 import hust from '../images/hust.jpg';
+import FacebookIcon from '../images/facebook-icon.png'
 
 export default class About extends React.Component {
   render() {
@@ -11,9 +11,9 @@ export default class About extends React.Component {
         {/* <!-- start banner Area --> */}
         <section className="banner-area relative" id="home">
           <div className="overlay overlay-bg"></div>
-          <div className="container">
+          <div className="">
             <div className="row fullscreen d-flex align-items-center justify-content-between">
-              <div className="banner-content col-lg-9 col-md-12">
+              <div className="banner-content col-lg-9 col-md-12" style={{ paddingLeft: 100 }}>
                 <h1 className="text-uppercase">
                   About CLA
                 </h1>
@@ -34,7 +34,7 @@ export default class About extends React.Component {
         {/* <!-- End feature Area --> */}
 
         {/* <!-- Start info Area --> */}
-        <section className="info-area pb-60">
+        <section className="info-area p-60">
           <div className="container-fluid">
             <div className="row align-items-center">
               <div style={{textAlign: "center"}}>
@@ -73,14 +73,14 @@ export default class About extends React.Component {
 
         {/* <!-- Start course-mission Area --> */}
         <div className="whole-wrap">
-          <div className="container">
+          <div className="">
             <div className="section-top-border">
               <h3 style={{textAlign: "center"}}>Đại học Bách khoa Hà Nội</h3>
               <div className="row">
                 <div className="col-md-3">
                   <img
                     src={hust}
-                    alt=""
+                    alt="hust-image"
                     className="img-fluid"
                   />
                 </div>
@@ -125,9 +125,9 @@ export default class About extends React.Component {
         {/* <!-- End course-mission Area --> */}
 
         {/* <!-- Start search-course Area --> */}
-        <section className="search-course-area relative">
+        <section className="search-course-area relative" style={{ padding: '50px' }}>
           <div className="overlay overlay-bg"></div>
-          <div className="container">
+          <div className="container-fluid">
             <div className="row justify-content-between align-items-center">
               <div className="col-lg-6 col-md-6 search-course-left">
                 <h1 className="text-white">
@@ -144,7 +144,7 @@ export default class About extends React.Component {
                 </p>
                 <div className="row details-content">
                   <div className="col single-detials">
-                  <img src= {TeacherImg} width={40} height={40} />
+                  <img src={TeacherImg} width={40} height={40} />
                     <a href="#">
                       <h4>Đội ngũ giáo viên</h4>
                     </a>
@@ -193,7 +193,7 @@ export default class About extends React.Component {
                     onblur="this.placeholder = 'Email'"
                   />
                   <div className="form-select" id="service-select">
-                    <select>
+                    <select style={{ height: 30 }}>
                       <option datd-display="">Bạn muốn tư vấn về</option>
                       <option value="1">Các khóa học của trung tâm</option>
                       <option value="2">Thi quốc tế</option>
@@ -385,112 +385,16 @@ export default class About extends React.Component {
           </div>
         </section>
         {/* <!-- End review Area --> */}
-        {/* <!-- Start gallery Area --> */}
-        <section className="gallery-area section-gap">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-7">
-                <a href="../../public/img/gallery/g1.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g1.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-5">
-                <a href="../../public/img/gallery/g2.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4">
-                <a href="../../public/img/gallery/g3.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g3.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4">
-                <a href="../../public/img/gallery/g4.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g4.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-4">
-                <a href="../../public/img/gallery/g5.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g5.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-5">
-                <a href="../../public/img/gallery/g6.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g6.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="col-lg-7">
-                <a href="../../public/img/gallery/g7.jpg" className="img-gal">
-                  <div className="single-imgs relative">
-                    <div className="overlay overlay-bg"></div>
-                    <div className="relative">
-                      <img
-                        className="img-fluid"
-                        src="../../public/img/gallery/g7.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- End gallery Area --> */}
+        <a href="https://www.facebook.com/cfl.edu.vn">
+        <img
+            src={FacebookIcon}
+            style={{ 
+              position: 'fixed', 
+              bottom: 30, 
+              right: 20, 
+              width: '5%'
+            }} />
+        </a>
       </div>
     );
   }
