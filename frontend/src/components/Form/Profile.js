@@ -11,27 +11,28 @@ export default class Profile extends Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <div className="container">
-        <header className="jumbotron">
-          <h3>
-            <strong>{currentUser.username}</strong> Profile
+      <div style={{ textAlign: "center" }}>
+        <header style={{ background: " #6382e6", height: "110px" }}></header>
+        <div style={{ height: '40vh' }}>
+          <h3 style={{ paddingTop: 50, paddingBottom: 30 }}>
+            <strong style={{ fontSize: '30px' }}>{currentUser.username}</strong> Profile
           </h3>
-        </header>
-        <p>
-          <strong>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
-        <p>
-          <strong>Id:</strong> {currentUser.id}
-        </p>
-        <p>
-          <strong>Email:</strong> {currentUser.email}
-        </p>
-        <strong>Authorities:</strong>
-        <ul>
-          {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
-        </ul>
+          <p>
+            <strong style={{ fontSize: '22px' }}>Token:</strong> {currentUser.accessToken.substring(0, 20)} ...{" "}
+            {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
+          </p>
+          <p>
+            <strong style={{ fontSize: '22px' }}>Id:</strong> {currentUser.id}
+          </p>
+          <p>
+            <strong style={{ fontSize: '22px' }}>Email:</strong> {currentUser.email}
+          </p>
+          <strong style={{ fontSize: '22px' }}>Authorities:</strong>
+          <ul>
+            {currentUser.roles &&
+              currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+          </ul>
+        </div>
       </div>
     );
   }

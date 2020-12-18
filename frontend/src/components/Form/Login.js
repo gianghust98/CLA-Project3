@@ -52,8 +52,8 @@ export default class Login extends React.Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
           window.location.reload();
+          this.props.history.push("/profile");
         },
         (error) => {
           const resMessage =

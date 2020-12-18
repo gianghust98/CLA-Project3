@@ -1,6 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 export default class Event extends React.Component {
+  state = {
+    listEvents: []
+  }
+  componentDidMount() {
+    // const results = axios.get('http://localhost:8080/')
+  }
   render() {
     return (
       <div class="cfl">
@@ -27,8 +34,44 @@ export default class Event extends React.Component {
                   </div>
                   <div class="detials col-12 col-md-6">
                     <p>25th February, 2018</p>
+                    <Link to="/event/detail">
+                      <h4>The Universe Through A Child'S Eyes</h4>
+                    </Link>
+                    <p>
+                      For most of us, the idea of astronomy is something we
+                      directly connect to “stargazing”, telescopes and seeing
+                      magnificent displays in the heavens.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 pb-30">
+                <div class="single-carusel row align-items-center">
+                  <div class="col-12 col-md-6 thumb">
+                    <img class="img-fluid" src="img/e2.jpg" alt="" />
+                  </div>
+                  <div class="detials col-12 col-md-6">
+                    <p>25th February, 2018</p>
                     <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
+                      <h4>The Universe Through A Child'S Eyes</h4>
+                    </a>
+                    <p>
+                      For most of us, the idea of astronomy is something we
+                      directly connect to “stargazing”, telescopes and seeing
+                      magnificent displays in the heavens.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 pb-30">
+                <div class="single-carusel row align-items-center">
+                  <div class="col-12 col-md-6 thumb">
+                    <img class="img-fluid" src="img/e1.jpg" alt="" />
+                  </div>
+                  <div class="detials col-12 col-md-6">
+                    <p>25th February, 2018</p>
+                    <a href="event-details.html">
+                      <h4>The Universe Through A Child'S Eyes</h4>
                     </a>
                     <p>
                       For most of us, the idea of astronomy is something we
@@ -64,7 +107,7 @@ export default class Event extends React.Component {
                   <div class="detials col-12 col-md-6">
                     <p>25th February, 2018</p>
                     <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
+                      <h4>The Universe Through A Child'S Eyes</h4>
                     </a>
                     <p>
                       For most of us, the idea of astronomy is something we
@@ -82,7 +125,7 @@ export default class Event extends React.Component {
                   <div class="detials col-12 col-md-6">
                     <p>25th February, 2018</p>
                     <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
+                      <h4>The Universe Through A Child'S Eyes</h4>
                     </a>
                     <p>
                       For most of us, the idea of astronomy is something we
@@ -100,25 +143,7 @@ export default class Event extends React.Component {
                   <div class="detials col-12 col-md-6">
                     <p>25th February, 2018</p>
                     <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
-                    </a>
-                    <p>
-                      For most of us, the idea of astronomy is something we
-                      directly connect to “stargazing”, telescopes and seeing
-                      magnificent displays in the heavens.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6" pb-30>
-                <div class="single-carusel row align-items-center">
-                  <div class="col-12 col-md-6 thumb">
-                    <img class="img-fluid" src="img/e2.jpg" alt="" />
-                  </div>
-                  <div class="detials col-12 col-md-6">
-                    <p>25th February, 2018</p>
-                    <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
+                      <h4>The Universe Through A Child'S Eyes</h4>
                     </a>
                     <p>
                       For most of us, the idea of astronomy is something we
@@ -129,24 +154,6 @@ export default class Event extends React.Component {
                 </div>
               </div>
               <div class="col-lg-6 pb-30">
-                <div class="single-carusel row align-items-center">
-                  <div class="col-12 col-md-6 thumb">
-                    <img class="img-fluid" src="img/e1.jpg" alt="" />
-                  </div>
-                  <div class="detials col-12 col-md-6">
-                    <p>25th February, 2018</p>
-                    <a href="event-details.html">
-                      <h4>The Universe Through A Child S Eyes</h4>
-                    </a>
-                    <p>
-                      For most of us, the idea of astronomy is something we
-                      directly connect to “stargazing”, telescopes and seeing
-                      magnificent displays in the heavens.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
                 <div class="single-carusel row align-items-center">
                   <div class="col-12 col-md-6 thumb">
                     <img class="img-fluid" src="img/e2.jpg" alt="" />
@@ -154,7 +161,7 @@ export default class Event extends React.Component {
                   <div class="detials col-12 col-md-6">
                     <p>25th February, 2018</p>
                     <a href="#">
-                      <h4>The Universe Through A Child S Eyes</h4>
+                      <h4>The Universe Through A Child'S Eyes</h4>
                     </a>
                     <p>
                       For most of us, the idea of astronomy is something we
@@ -171,22 +178,6 @@ export default class Event extends React.Component {
           </div>
         </section>
         {/* <!-- End events-list Area --> */}
-        {/* <!-- Start cta-two Area --> */}
-        <section class="cta-two-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 cta-left">
-                <h1>Not Yet Satisfied with our Trend?</h1>
-              </div>
-              <div class="col-lg-4 cta-right">
-                <a class="primary-btn wh" href="#">
-                  view our blog
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- End cta-two Area --> */}
       </div>
     );
   }

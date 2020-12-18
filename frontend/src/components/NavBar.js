@@ -99,14 +99,14 @@ export default class NavBar extends React.Component {
                 {showAdminBoard && (
                   <li className="nav-item">
                     <Link to={"/admin"} className="nav-link">
-                      Admin Board
+                      Admin Mode
                     </Link>
                   </li>
                 )}
                 {currentUser && (
                   <li className="nav-item">
                     <Link to={"/user"} className="nav-link">
-                      User
+                      User Mode
                     </Link>
                   </li>
                 )}
@@ -119,7 +119,7 @@ export default class NavBar extends React.Component {
                     </li>
                     <li className="nav-item">
                       <a href="/" className="nav-link" onClick={this.logOut}>
-                        LogOut
+                        Logout
                       </a>
                     </li>
                   </div>
