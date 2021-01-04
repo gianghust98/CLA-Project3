@@ -1,35 +1,39 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import { Button, Table } from "reactstrap";
 import DashBoard from "./DashBoard.js";
-import hust from "../../images/hust.jpg";
-import tas from "../../images/teacherandstudent.jpg";
-//import { Table } from 'reactstrap';
+// import hust from "../../images/hust.jpg";
+// import tas from "../../images/teacherandstudent.jpg";
 
 class BannerAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       bannerList: [],
+      showForm : false,
     };
   }
-  render() {
-    const mystyle = {
-      backgroundColor: "#1eb1c8",
-      height: 100,
-    };
+  componentDidMount() {
+    axios.get("http://localhost:8080/api/banners")
+      .then(res => {
+        const listbanner = res.data;
+        console.log('data: ',listbanner);
+        this.setState({ bannerList : listbanner });
+      })
+      .catch(error => console.log(error));
+  }
+  render() {  
     const { bannerList } = this.state;
     return (
-      <div className="bannerTable">
-        {/* <div style={mystyle}></div> */}
-        {/* <div className="container"> */}
+      <div className="bannerTable">    
         <div>
           <div className="row">
             <div
-              className="col-sm-3 categories"
+              className="col-sm-2 categories"
               style={{ paddingLeft: 0, paddingRight: 0 }}>
               <DashBoard />
             </div>
-            <div className="col-sm-9 ">
+            <div className="col-sm-10 ">
               <Table striped>
                 <thead>
                   <tr>
@@ -42,9 +46,9 @@ class BannerAdmin extends Component {
                 {bannerList.map((bnL) => (
                   <tbody>
                     <tr>
-                      <td>{bnL.banner_name}</td>
+                      <td>{bnL.bannerName}</td>
                       <td>
-                        <img src={bnL.image_url} alt="img_banner"></img>
+                        <img src={bnL.imageUrl} alt="img_banner"></img>
                       </td>
                       <td>
                         <Button color="info">upload banner</Button>
@@ -56,7 +60,7 @@ class BannerAdmin extends Component {
                   </tbody>
                 ))}
                 {/* temporary */}
-                <tbody>
+                {/* <tbody>
                   <tr>
                     <td>Introduce tutorials</td>
                     <td>
@@ -81,7 +85,7 @@ class BannerAdmin extends Component {
                       <Button color="info">Confirm</Button>
                     </td>
                   </tr>
-                </tbody>
+                </tbody> */}
               </Table>
             </div>
           </div>

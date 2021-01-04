@@ -4,7 +4,7 @@ module.exports = app => {
   const events = require("../controllers/event.controller")
   var router = require("express").Router()
   // Create a new Event
-  router.post("/", events.create)
+  router.post("/addevent", events.create)
 
   //Retrieve all Events
   router.get("/", events.findAll)
@@ -13,13 +13,13 @@ module.exports = app => {
   router.get("/:id", events.findOne)
 
   // Update a Event with id
-  router.put('/:id', events.update)
+  router.put("/update/:id", events.update)
 
   // Delete a Event with id
-  router.delete('/:id', events.delete)
+  router.delete("/delete/:id", events.delete)
 
   // Delete all Events
-  router.delete('/', events.deleteAll)
+  router.delete("/delete/all", events.deleteAll)
 
-  app.use('/api/events', router)
+  app.use("/api/events", router)
 }

@@ -3,10 +3,6 @@ module.exports = app => {
   var router = require("express").Router()
   // Create a new Banner
   router.post("/", banners.create)
-
-  //Retrieve all Banners
-  router.get("/", banners.findAll)
-
   // Retrieve all published Banners
   // router.get("/published", Banners.findAllPublished)
 
@@ -22,5 +18,7 @@ module.exports = app => {
   // Delete all Banners
   router.delete('/', banners.deleteAll)
 
+   //Retrieve all Banners
+  router.get("/", banners.findAll)
   app.use('/api/banners', router)
 }
