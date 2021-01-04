@@ -113,17 +113,19 @@
 	}
 } */
 .title_categories {
+	display: flex;
 	padding-left: 15px;
 	height: 50px;
 	color: white;
 }
 .item_categories {
-	padding-left: 15px;
-	height: 50px;
 	color:#ced4da;
+	padding: 15px;
+	margin-left: 23px;
 }
 .item_categories:hover {
-	background-color:#212529;
+	background-color:#13dafedb;
+	color: white;
 }
 .lineGraph {
 	margin: 20px;
@@ -134,6 +136,33 @@
 	padding: 10px;
 	margin: 20px;
 	background-color: white;
+}
+.events{
+	color: "#ced4dae8";
+	text-decoration: "none"
+}
+.optionsEvent {
+	display: none;
+	max-width: 170px;
+	border-radius: 10px;
+	margin-left: 10px;
+	padding: 10px;
+	background-color: white;
+	text-decoration: none;
+	color: gray;
+}
+
+.events:hover .optionsEvent {
+	display: block;
+	
+}
+.formEvent {
+	border: solid 1px;
+	background-color: #e9ecef40;
+	margin-top: 20px;
+	padding: 15px;
+	width: 500px;
+	display: inline-block;
 }
 
 

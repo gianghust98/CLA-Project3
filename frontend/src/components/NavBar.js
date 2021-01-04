@@ -83,7 +83,7 @@ export default class NavBar extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <Link to="/event">Sự kiện</Link>
+                  <Link to="/events">Sự kiện</Link>
                 </li>
                 <li>
                   <Link to="/news">Tin tức</Link>

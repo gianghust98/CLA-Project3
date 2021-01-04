@@ -27,6 +27,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   Banner.find()
     .then(data => {
+      //console.log('data:' , data);
       res.send(data)
     })
     .catch(err => {

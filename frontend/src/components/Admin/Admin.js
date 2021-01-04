@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashBoard from "./DashBoard.js";
 import ChartsPage from "./ChartsPage.js";
+
 import "../../App.css";
 
 class Admin extends Component {
@@ -12,14 +13,17 @@ class Admin extends Component {
     return (
       <div className="admin_page">
         {/* <div style={mystyle}></div> */}
-        <div className="">   {/* cho nay neu bo className="container" di thi se full man nay */}
+        <div className="">   {/* cho nay neu bo className="container" di thi se full man */}
           <div className="row">
             <div
-              className="col-sm-3 categories"
+              className="col-md-2 categories"
               style={{ paddingLeft: 0, paddingRight: 0 }}>
               <DashBoard />
             </div>
-            <div className="col-sm-9 graphs">
+            <div className="col-md-10 graphs">
+            <div style={{height: 10}}> 
+                    
+                </div>
               <h5 style={{ color: "#545b62" }}> Welcome to my Admin!</h5>
               <div className="lineGraph">
                 <ChartsPage />
@@ -50,6 +54,7 @@ class Admin extends Component {
             </div>
           </div>
         </div>
+        
       </div>
     );
   }
