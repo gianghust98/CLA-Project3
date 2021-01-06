@@ -64,18 +64,18 @@ exports.update = (req, res) => {
     return res.status(400).send({
       message: "Data to update can not be empty"
     })
-  }else{
+  } else {
     console.log('req.body: ',req.body );
     const id = req.params.id;
     console.log(id);
     const { title,time,place,ticket,description,short_description} = req.body;
     Event.findByIdAndUpdate(  { _id: id }, { title,time,place,ticket,description,short_description },function (err) {
-        if (err) {
-          res.send(CALLBACK_ERR);
-        } else {
-          res.send({ success: true, message: "Update completed!" });
-        }
-      })
+      if (err) {
+        res.send(CALLBACK_ERR);
+      } else {
+        res.send({ success: true, message: "Update completed!" });
+      }
+    })
   }
   
     // .then(data => {

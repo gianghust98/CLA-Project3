@@ -1,5 +1,3 @@
-const e = require("express")
-
 module.exports = app => {
   const events = require("../controllers/event.controller")
   var router = require("express").Router()
