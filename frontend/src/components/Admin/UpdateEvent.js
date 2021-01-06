@@ -9,64 +9,6 @@ class UpdateEvent extends Component {
       eventsList: [],
     };
     this.getEvents();
-
-    getEvents = () => {
-      fetch("http://localhost:8080/api/events", {
-        method: "get",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          this.setState({
-            eventsList: [...res],
-          });
-        });
-    };
-    handleClickEdit = (eL) => {
-      console.log("id without _", eL._id);
-      fetch(`http://localhost:8080/api/events/update/${eL._id}`, {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          switch (res.success) {
-            case true:
-              this.props.history.pop();
-              break;
-            case false:
-              alert("Update failed!");
-              break;
-          }
-        });
-    };
-    handleClickDelete = (eL) => {
-      console.log("id_delete: ", eL._id);
-      fetch(`http://localhost:8080/api/events/delete/${eL._id}`, {
-        method: "delete",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          switch (res.success) {
-            case true:
-              this.getEvents();
-              break;
-            case false:
-              alert("Deletion failed!");
-              break;
-          }
-        });
-    };
   }
   render() {
     const { eventsList } = this.state;
@@ -126,6 +68,63 @@ class UpdateEvent extends Component {
       </div>
     );
   }
+  getEvents = () => {
+    fetch("http://localhost:8080/api/events", {
+      method: "get",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          eventsList: [...res],
+        });
+      });
+  };
+  handleClickEdit = (eL) => {
+    console.log("id without _", eL._id);
+    fetch(`http://localhost:8080/api/events/update/${eL._id}`, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        switch (res.success) {
+          case true:
+            this.props.history.pop();
+            break;
+          case false:
+            alert("Update failed!");
+            break;
+        }
+      });
+  };
+  handleClickDelete = (eL) => {
+    console.log("id_delete: ", eL._id);
+    fetch(`http://localhost:8080/api/events/delete/${eL._id}`, {
+      method: "delete",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        switch (res.success) {
+          case true:
+            this.getEvents();
+            break;
+          case false:
+            alert("Deletion failed!");
+            break;
+        }
+      });
+  };
 }
 
 export default UpdateEvent;
