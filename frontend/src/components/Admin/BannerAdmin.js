@@ -61,7 +61,6 @@ class BannerAdmin extends Component {
               <Table striped>
                 <thead>
                   <tr>
-                    <th>Name</th>
                     <th>Preview</th>
                     <th>New Banner</th>
                     <th>State</th>
@@ -70,10 +69,9 @@ class BannerAdmin extends Component {
                 { bannerList && bannerList.map((bnL) => (
                   <tbody>
                     <tr>
-                      <td>{" "}</td>
-                      <td>
-                        {bannerList 
-                          ? <img src={bnL.bannerImage} alt="img_banner" style={{ width: 'auto', height: '100px'}} />
+                      <td width="70%">
+                        {bannerList.length > 0
+                          ? <img src={bnL.bannerImage} alt="img_banner" style={{ width: 'auto', height: '200px'}} />
                           : <img src="img/img-banner.png" />}
                       </td>
                       <td>
