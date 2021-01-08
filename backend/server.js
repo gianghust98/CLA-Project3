@@ -1,23 +1,27 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
 const app = express()
+const dbConfig = require('./app/config/db.config')
+const api = require('../backend/app/routes/banner.routes')
 
 var corsOptions = {
   origin: 'http://localhost:3000'
 }
 
 app.use(cors(corsOptions))
+app.use('/public', express.static('public'))
 
 // parse requests of content-type application/json
 app.use(bodyParser.json())
 
 // parser requests of content-type application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/api', api)
 
 const db = require('./app/models')
 const Role = db.role
+db.mongoose.Promise = global.Promise
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -65,7 +69,7 @@ function initial() {
 app.get('/', (req, res) => {
   res.json({ message: "Welcome to application" })
 })
-require('./app/routes/banner.routes')(app)
+// require('./app/routes/banner.routes')
 require('./app/routes/course.routes')(app)
 require('./app/routes/courseGroup.routes')(app)
 require('./app/routes/event.routes')(app)
@@ -80,4 +84,15 @@ require('./app/routes/user.routes')(app)
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
+})
+app.use((req, res, next) => {
+  //Error goes via next() method
+  setImmediate(() => {
+    next(new Error('Something went wrong'))
+  })
+})
+app.use(function(err, req, res, next) {
+  console.error(err.message)
+  if(!err.statusCode) err.statusCode = 500
+  res.status(err.statusCode).send(err.message)
 })

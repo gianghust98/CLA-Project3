@@ -11,17 +11,41 @@ class BannerAdmin extends Component {
     this.state = {
       bannerList: [],
       showForm : false,
+      bannerSrc: ''
     };
+    this.onFileChange = this.onFileChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
   componentDidMount() {
-    axios.get("http://localhost:8080/api/banners")
+    axios.get("http://localhost:8080/api/bannerImage")
       .then(res => {
-        const listbanner = res.data;
+        console.log(res)
+        const listbanner = res.data.banners;
         console.log('data: ',listbanner);
         this.setState({ bannerList : listbanner });
       })
       .catch(error => console.log(error));
   }
+  // uploadImage() {
+  //   const body = 
+  //   axios.post("http://localhost:8080/api/uploadBanner")
+  // }
+  onFileChange(e) {
+    this.setState({
+      bannerSrc: e.target.files[0]
+    })
+  }
+  onSubmit(e) {
+    e.preventDefault()
+    const formData = new FormData()
+    formData.append('bannerImage', this.state.bannerSrc)
+    axios.post("http://localhost:8080/api/uploadBanner", formData, {
+
+    }).then(res => {
+      console.log(res)
+    })
+  }
+
   render() {  
     const { bannerList } = this.state;
     return (
@@ -43,15 +67,25 @@ class BannerAdmin extends Component {
                     <th>State</th>
                   </tr>
                 </thead>
-                {bannerList.map((bnL) => (
+                { bannerList && bannerList.map((bnL) => (
                   <tbody>
                     <tr>
-                      <td>{bnL.bannerName}</td>
+                      <td>{" "}</td>
                       <td>
-                        <img src={bnL.imageUrl} alt="img_banner"></img>
+                        {bannerList 
+                          ? <img src={bnL.bannerImage} alt="img_banner" style={{ width: 'auto', height: '100px'}} />
+                          : <img src="img/img-banner.png" />}
                       </td>
                       <td>
-                        <Button color="info">upload banner</Button>
+                        {/* <Button color="info">upload banner</Button> */}
+                        <form onSubmit={this.onSubmit}>
+                          <div className="form-input">
+                            <input type="file" onChange={this.onFileChange} />
+                          </div>
+                          <div className="form-group">
+                            <button className="btn btn-primary" type="submit">Upload</button>
+                          </div>
+                        </form>
                       </td>
                       <td>
                         <Button color="info">Confirm</Button>
@@ -59,33 +93,6 @@ class BannerAdmin extends Component {
                     </tr>
                   </tbody>
                 ))}
-                {/* temporary */}
-                {/* <tbody>
-                  <tr>
-                    <td>Introduce tutorials</td>
-                    <td>
-                      <img src={hust} alt="img_banner" width={300}></img>
-                    </td>
-                    <td>
-                      <Button color="info">upload banner</Button>
-                    </td>
-                    <td>
-                      <Button color="info">Confirm</Button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Type of tutorials</td>
-                    <td>
-                      <img src={tas} alt="img_banner" width={300}></img>
-                    </td>
-                    <td>
-                      <Button color="info">upload banner</Button>
-                    </td>
-                    <td>
-                      <Button color="info">Confirm</Button>
-                    </td>
-                  </tr>
-                </tbody> */}
               </Table>
             </div>
           </div>

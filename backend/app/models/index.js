@@ -7,7 +7,7 @@ const db = {}
 db.mongoose = mongoose
 db.url = dbConfig.url
 
-db.banners = require('./banner.model')(mongoose)
+// db.banners = require('./banner.model')(mongoose)
 db.courses = require('./course.model')(mongoose)
 db.course_groups = require('./courseGroup.model')(mongoose)
 db.events = require('./event.model')(mongoose)
