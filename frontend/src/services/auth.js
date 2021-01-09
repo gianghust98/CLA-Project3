@@ -11,13 +11,13 @@ class AuthService {
       })
       .then(response => {
         if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data))
+          localStorage.setItem("userCLA", JSON.stringify(response.data))
         }
         return response.data
       })
   }
   logout() {
-    localStorage.removeItem("user")
+    localStorage.removeItem("userCLA")
   }
   register(username, email, password) {
     return axios.post(API_URL + "signup", {
@@ -27,7 +27,7 @@ class AuthService {
     })
   }
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem("user"))
+    return JSON.parse(localStorage.getItem("userCLA"))
   }
 }
 export default new AuthService()
