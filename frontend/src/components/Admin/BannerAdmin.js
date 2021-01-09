@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { Button, Table } from "reactstrap";
 import DashBoard from "./DashBoard.js";
-// import hust from "../../images/hust.jpg";
-// import tas from "../../images/teacherandstudent.jpg";
-
 class BannerAdmin extends Component {
   constructor(props) {
     super(props);
@@ -26,10 +23,6 @@ class BannerAdmin extends Component {
       })
       .catch(error => console.log(error));
   }
-  // uploadImage() {
-  //   const body = 
-  //   axios.post("http://localhost:8080/api/uploadBanner")
-  // }
   onFileChange(e) {
     this.setState({
       bannerSrc: e.target.files[0]
@@ -39,9 +32,8 @@ class BannerAdmin extends Component {
     e.preventDefault()
     const formData = new FormData()
     formData.append('bannerImage', this.state.bannerSrc)
-    axios.post("http://localhost:8080/api/uploadBanner", formData, {
-
-    }).then(res => {
+    axios.post("http://localhost:8080/api/uploadBanner", formData, {})
+    .then(res => {
       console.log(res)
     })
   }
@@ -66,12 +58,12 @@ class BannerAdmin extends Component {
                     <th>State</th>
                   </tr>
                 </thead>
-                { bannerList && bannerList.map((bnL) => (
+                {bannerList && 
                   <tbody>
                     <tr>
                       <td width="70%">
                         {bannerList.length > 0
-                          ? <img src={bnL.bannerImage} alt="img_banner" style={{ width: 'auto', height: '200px'}} />
+                          ? <img src={bannerList[0].bannerImage} alt="img_banner" style={{ width: 'auto', height: '200px'}} />
                           : <img src="img/img-banner.png" />}
                       </td>
                       <td>
@@ -89,8 +81,7 @@ class BannerAdmin extends Component {
                         <Button color="info">Confirm</Button>
                       </td>
                     </tr>
-                  </tbody>
-                ))}
+                  </tbody>}
               </Table>
             </div>
           </div>
