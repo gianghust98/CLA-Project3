@@ -16,6 +16,7 @@ import AddEvent from './components/Admin/AddEvent';
 import UpdateEvent from './components/Admin/UpdateEvent';
 import PrivateRoute from './components/PrivateRoute'
 import PublicRoute from './components/PublicRoute' 
+import StudentsNeedAdvice from './components/Admin/StudentsNeedAdvice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
@@ -26,7 +27,8 @@ const App = (props) => {
         props.location.pathname !== '/admin' &&
         props.location.pathname !== '/admin/banners' &&  
         props.location.pathname !== '/admin/event' && 
-        props.location.pathname !== '/admin/updateevent' ? <NavBar /> : null 
+        props.location.pathname !== '/admin/updateevent' && 
+        props.location.pathname !== '/admin/studentsneedadvice/get' ? <NavBar /> : null 
       }
       <PublicRoute restricted={false} exact path="/" component={Home} />
       <PublicRoute restricted={false} exact path="/about" component={About} />
@@ -40,11 +42,13 @@ const App = (props) => {
       <PrivateRoute exact path="/admin/banners" component={BannerAdmin} />
       <PrivateRoute exact path="/admin/event" component={AddEvent} />
       <PrivateRoute exact path="/admin/updateevent" component={UpdateEvent} />
+      <PrivateRoute exact path="/admin/studentsneedadvice/get" component={StudentsNeedAdvice} />
       { 
         props.location.pathname !== '/admin' &&
         props.location.pathname !== '/admin/banners' &&  
         props.location.pathname !== '/admin/event' &&
-        props.location.pathname !== '/admin/updateevent' ? <Footer /> : null 
+        props.location.pathname !== '/admin/updateevent' &&
+        props.location.pathname !== '/admin/studentsneedadvice/get' ? <Footer /> : null 
       }
     </Router>
   );

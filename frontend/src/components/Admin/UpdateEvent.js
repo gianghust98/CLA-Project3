@@ -22,7 +22,7 @@ class UpdateEvent extends Component {
               <DashBoard />
             </div>
             <div className="col-md-10" style={{ textAlign: "center" }}>
-              <Table striped>
+              <Table responsive>
                 <thead>
                   <tr>
                     <th> Title </th>
@@ -35,10 +35,10 @@ class UpdateEvent extends Component {
                 {eventsList.map((eL) => (
                   <tbody>
                     <tr>
-                      <th>{eL.title} </th>
-                      <th>{eL.time}</th>
-                      <th>{eL.description}</th>
-                      <th>{eL.place}</th>
+                      <th style = {{fontWeight : 400}}>{eL.title} </th>
+                      <th style = {{fontWeight : 400}}>{eL.time}</th>
+                      <th style = {{fontWeight : 400}}>{eL.description}</th>
+                      <th style = {{fontWeight : 400}}>{eL.place}</th>
                       <th>
                         <Button
                           outline
