@@ -56,7 +56,7 @@ class DashBoard extends Component {
           </a>
         </div>
         <div className="item_categories">
-          <a href="#" style={{ color: "#ced4dae8", textDecoration: "none" }}>
+          <a href="/admin/studentsneedadvice/get" style={{ color: "#ced4dae8", textDecoration: "none" }}>
             Students
           </a>
         </div>

@@ -1,10 +1,68 @@
-import React from "react";
+import React, { Component } from "react";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+import { isEmail } from "validator";
 import TeacherImg from '../images/teacher.svg';
 import CertificateImg from '../images/certificate.svg';
 import FacebookIcon from '../images/facebook-icon.png'
 
-export default class Home extends React.Component {
+
+const required = (value) => {
+  if (!value) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This field is required!
+      </div>
+    );
+  }
+};
+
+const checkemail = (value) => {
+  if (!isEmail(value)) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This is not a valid email.
+      </div>
+    );
+  }
+};
+
+const checkfullname = (value) => {
+  if (value.length < 4 || value.length > 20) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        Type your correct full name!
+      </div>
+    );
+  }
+};
+const checkphonenumber = (value) => {
+  if (value.length < 9 || value.length > 11) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        Type your correct phone number in VN!
+      </div>
+    );
+  }
+};
+export default class Home extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      fullname: "",
+      email: "",
+      phonenumber: "",
+      askfield: "",
+  
+    };
+    
+  }
+
+  
   render() {
+    const { fullname , email, phonenumber , askfield} = this.state;
     return (
       <div>
         {/* <!-- start banner Area --> */}
@@ -329,45 +387,79 @@ export default class Home extends React.Component {
                 </div>
               </div>
               <div className="col-lg-4 col-md-6 search-course-right section-gap">
-                <form className="form-wrap" action="#">
+                <Form className="form-wrap"  
+                onSubmit= {this.handleSubmit}
+                ref={(c) => {
+                  this.form = c;
+                }}>
                   <h4 className="text-white pb-20 text-center mb-30">
                     Đăng ký nhận tư vấn
                   </h4>
-                  <input
+                  <Input
                     type="text"
                     className="form-control"
-                    name="name"
+                    name="fullname"
                     placeholder="Họ và tên"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Họ và tên'"
+                    onChange = {(event) => {
+                      //console.log("e.target" , event.target.value);
+                      this.setState({
+                        fullname: event.target.value,
+                      });
+                    }}
+                    value={fullname || ""}
+                    validations={[checkfullname]}
                   />
-                  <input
-                    type="tel"
+                  <Input
+                    type="text"
                     className="form-control"
                     name="phone"
                     placeholder="Số điện thoại"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Số điện thoại'"
+                    onChange = {(event) => {
+                      this.setState({
+                        phonenumber: event.target.value,
+                      });
+                    }}
+                    value={phonenumber || ""}
+                    validations={[required, checkphonenumber]}
                   />
-                  <input
+                  <Input
                     type="email"
                     className="form-control"
                     name="email"
                     placeholder="Email"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Email'"
+                    onChange = {(event) => {
+                      
+                      this.setState({
+                        email: event.target.value,
+                      });
+                    }}
+                    value={email || ""}
+                    validations={[required, checkemail]}
                   />
-                  <div className="form-select" id="service-select">
-                    <select style={{ height: 30 }}>
+                  <div className="form-select"  >
+                    <select className = "selectfield" 
+                            // value={askfield || ""} 
+                            onChange={(event) => {                
+                              this.setState({
+                                askfield: event.target.selectedOptions[0].text,
+                              });
+                            }}>
                       <option datd-display="">Bạn muốn tư vấn về</option>
-                      <option value="1">Các khóa học của trung tâm</option>
-                      <option value="2">Thi quốc tế</option>
-                      <option value="3">Thi nội bộ</option>
-                      <option value="4">Khác</option>
+                      <option value="1" >Các khóa học của trung tâm</option>
+                      <option value="2" >Thi quốc tế</option>
+                      <option value="3" >Thi nội bộ</option>
+                      <option value="4" >Lĩnh vực khác</option>
                     </select>
                   </div>
                   <button className="primary-btn text-uppercase">Xác nhận</button>
-                </form>
+                  <CheckButton style={{ display: 'none' }} ref={c => { this.checkBtn = c }} />
+                </Form>
               </div>
             </div>
           </div>
@@ -805,4 +897,38 @@ export default class Home extends React.Component {
       </div>
     );
   }
+  handleSubmit= (e) => {
+    e.preventDefault();
+    const { fullname , email, phonenumber , askfield} = this.state;
+    this.form.validateAll();
+    if ( this.checkBtn.context._errors.length === 0 ) {
+      alert('success');
+    }
+    fetch("http://localhost:8080/api/studentsneedadvice", {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullname,
+        email,
+        phonenumber,
+        askfield
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        switch (res.success) {
+          case true:
+            //this.props.history.push("/about");
+            window.location.reload(false);
+            break;
+          case false:
+            alert("Some errors happened!");
+            break;
+        }
+      });
+  }
+  
 }
